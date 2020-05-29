@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: center;
+}   
+
+
+.header h1{
+    text-align: center;
+}
+li{
+    list-style: none;
+}
+.list_of_items{
+    display: flex;
+    justify-content:space-between;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+

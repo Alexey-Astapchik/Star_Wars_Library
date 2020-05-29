@@ -20,6 +20,10 @@ class SwapiServiceAPI {
     getPerson(id) {
         return this.getData(`/people/${id}/`)
     }
+
+    getPlanet(id) {
+      return this.getData(`/planets/${id}/`)
+    }
 }
 
 export default SwapiServiceAPI;

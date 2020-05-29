@@ -2,6 +2,11 @@ import React from 'react';
 
 import Header from '../Header/Header'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI';
+import Planet from '../Planet/Planet';
+import List from '../List/List'
+
+import '../App/App.css'
+import Hero_Infos from '../Hero_Infos/Hero_Infos';
 
 const App = () => {
     
@@ -13,8 +18,11 @@ const App = () => {
     })  
 
     return (
-        <div>
+        <div className="app">
             <Header />
+            <Planet/>
+            <List/>
+            <Hero_Infos/>
         </div>
     )
 }

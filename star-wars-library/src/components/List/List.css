@@ -1,0 +1,10 @@
+.list_with_heros{
+    margin-top: 120px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.heros{
+    margin-left: 20px;
+}
