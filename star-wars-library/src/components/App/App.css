@@ -3,3 +3,8 @@
     margin: 0 auto;
     padding: 20px 0;
 }
+
+.hero_information{
+    display: flex;
+    justify-content: space-between;
+}

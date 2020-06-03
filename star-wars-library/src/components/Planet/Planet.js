@@ -2,42 +2,43 @@ import React from 'react';
 import '../Planet/Planet.css';
 
 import SwapiServiceAPI from '../../services/SwapiServiceAPI'
+import Loader from '../Loader/Loader';
 
 export default class Planet extends React.Component {
 
     constructor() {
-        super()
-        this.updatePlanet()
-    }
+        super();
+        this.updatePlanet();
+    };
 
-    swapi = new SwapiServiceAPI ();
+    swapi = new SwapiServiceAPI();
 
     state = {
-        name: null,
-        diameter: null,
-        population: null,
-        gravity: null
+        planet: {},
+        load: true
     }
 
+    onPlanetLoaded = (planet) => {
+        this.setState({planet, load:false});
+    }
     updatePlanet() {
-        this.swapi.getPlanet(2).then((planet) =>{
-            this.setState({
-                name: planet.name,
-                diameter: planet.diameter,
-                population: planet.population,
-                gravity: planet.gravity
-            })
-        })
+        const id = Math.round(Math.random() * 25);
+        this.swapi.getPlanet(id).then(this.onPlanetLoaded);
     }
 
     render () {
-        const { name, diameter, population, gravity } = this.state;
+        const {planet:{name, diameter, population, gravity, id}, load } = this.state;
+
+        if(load){
+            return <Loader/>
+        }
 
         return (
             <div className="planet">
                 <div className="random_planet">
-                    <h3>Planet {name} </h3>
+                    <h3>Planet: {name} </h3>
                     <div>
+                        <img className="pic_planet" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}/>
                         <ul>
                             <li className="diametr">
                                 <span>Diametr:</span>

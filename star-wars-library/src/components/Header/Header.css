@@ -6,8 +6,14 @@
 
 .header h1{
     text-align: center;
-}
-li{
+    color: #FFEE58!important;
+    font-family: jedi-outline;
+    font-size: 4em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+};
+
+.list_of_items li{
     list-style: none;
 }
 .list_of_items{

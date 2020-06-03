@@ -21,8 +21,10 @@ const App = () => {
         <div className="app">
             <Header />
             <Planet/>
-            <List/>
-            <Hero_Infos/>
+            <div className="hero_information">
+                <List/>
+                <Hero_Infos/>
+            </div>
         </div>
     )
 }
