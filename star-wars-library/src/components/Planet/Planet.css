@@ -3,6 +3,17 @@
     border: 1px solid black;
     border-radius: 10px;
     width: 50%;
+    transition: all 0.5s;
+}
+.planet:hover{
+    margin-top: 120px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+    background-image: url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1970&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .random_planet{
@@ -11,6 +22,7 @@
 }
 li{
     margin-top: 10px;
+    color: #FFEE58!important;
 }
 .diametr{
     border: 1px solid black;

@@ -31,6 +31,7 @@ li{
     border-radius: 10px;
     width: 30%;
     padding-left: 20px;
+    color: #FFEE58!important;
 }
 .mass:hover{
     border: 1px solid red;
@@ -41,6 +42,7 @@ li{
     border-radius: 10px;
     width: 30%;
     padding-left: 20px;
+    color: #FFEE58!important;
 }
 .home:hover{
     border: 1px solid red;
@@ -50,7 +52,13 @@ li{
     border-radius: 10px;
     width: 30%;
     padding-left: 20px;
+    color: #FFEE58!important;
 }
 .gender:hover{
     border: 1px solid red;
+}
+
+.pic_hero{
+    width: 30%;
+    height: 30%;
 }

@@ -13,8 +13,8 @@ export default class SwapiServiceAPI {
       }
 
     async getPeople() {
-        const response = await this.getData('/people/');
-        return response.results.map(this.transformPerson);
+      const response = await this.getData('/people/');
+      return response.results.map(this.transfromPerson);
     }
 
     async getPerson(id) {
@@ -50,9 +50,11 @@ export default class SwapiServiceAPI {
         mass: person.mass,
         name: person.name,
         gender: person.gender,
-        homeworld: person.homeworld
+        skincolor: person.skin_color
       }
     }
+
+    //create a function transfrom for Spaceship
 }
 
   

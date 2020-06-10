@@ -3,30 +3,45 @@ import React from 'react';
 import Header from '../Header/Header'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI';
 import Planet from '../Planet/Planet';
-import List from '../List/List'
+import List from '../List/List';
 
 import '../App/App.css'
 import Hero_Infos from '../Hero_Infos/Hero_Infos';
 
-const App = () => {
-    
-    const swapi = new SwapiServiceAPI();
+export default class App extends React.Component  {
 
-    swapi.getPerson(1)
-    .then((body) => {
-        console.log(body);
-    })  
+    state = {
+        isRandomPlanet: true,
+        selectedHero: null
+    }
 
-    return (
-        <div className="app">
-            <Header />
-            <Planet/>
-            <div className="hero_information">
-                <List/>
-                <Hero_Infos/>
+    onTogglePlanet = () => {
+        this.setState((prevState) => {
+            return {isRandomPlanet: !prevState.isRandomPlanet,}
+        });
+    };
+
+    selectPerson = (id) => {
+        this.setState({
+            selectedHero: id
+        })
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <Header />
+                {this.state.isRandomPlanet && <Planet />}
+                <a className="toggle"
+                    onClick={this.onTogglePlanet}>
+                        on/off
+                </a>
+                <div className="hero_information">
+                 <List onItemClick={this.selectPerson}/>
+                 <Hero_Infos personID={this.state.selectedHero}/>
+             </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default App;

@@ -6,7 +6,7 @@ const Header = () => {
         <div className='header'>
             <div>
                 <div>
-                    <h1>Star Wars Wiki</h1>
+                    <h1>Star Wars Guide</h1>
                 </div>
                 <div className='list'>
                     <ul className="d-flex list_of_items">
