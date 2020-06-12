@@ -7,8 +7,11 @@ import List from '../List/List';
 
 import '../App/App.css'
 import Hero_Infos from '../Hero_Infos/Hero_Infos';
+import People_page from '../People_page/People_page';
 
 export default class App extends React.Component  {
+
+    swapi = new SwapiServiceAPI();
 
     state = {
         isRandomPlanet: true,
@@ -21,11 +24,6 @@ export default class App extends React.Component  {
         });
     };
 
-    selectPerson = (id) => {
-        this.setState({
-            selectedHero: id
-        })
-    };
 
     render() {
         return (
@@ -36,10 +34,17 @@ export default class App extends React.Component  {
                     onClick={this.onTogglePlanet}>
                         on/off
                 </a>
+                <People_page/>
+                {/* <People_page/>
+                <People_page/> */}
                 <div className="hero_information">
-                 <List onItemClick={this.selectPerson}/>
+                 <List 
+                    getData={this.swapi.getAllPlanet}  
+                    onItemClick={this.selectPerson}
+                    renderItem = {(item) => `${item.name} ${item.diameter}`}/>
+
                  <Hero_Infos personID={this.state.selectedHero}/>
-             </div>
+            </div>
             </div>
         )
     }

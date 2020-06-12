@@ -8,23 +8,25 @@ export default class List extends React.Component {
     swapi = new SwapiServiceAPI()
 
     state = {
-        people: null,
+        item: null,
     }
 
     componentDidMount() {
-        this.swapi.getPeople().then((people) => {
-            this.setState({people})
+        this.props.getData().then((item) => {
+            this.setState({item})
         });
     }
 
 
     renderList(arr) {
         return arr.map((item) => {
+            const text = this.props.renderItem(item);
             return (
-                <li className="hero_item_info" key= {item.id}
+                <li className="hero_item_info" 
+                    key= {item.id}
                     onClick={() => this.props.onItemClick(item.id)}>
                     <p>
-                        {item.name}
+                        {text}
                     </p>
                 </li>
             )
@@ -34,13 +36,13 @@ export default class List extends React.Component {
     render() {
         console.log(this.state.people);
 
-        const { people } = this.state;
+        const { item } = this.state;
 
-        if(!people) {
+        if(!item) {
             return <Loader/>
         }
 
-        const items = this.renderList(people)
+        const items = this.renderList(item)
 
         return(
             <div className="list_with_heros">

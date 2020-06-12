@@ -12,7 +12,7 @@ export default class SwapiServiceAPI {
         return await response.json();
       }
 
-    async getPeople() {
+    getPeople = async () => {
       const response = await this.getData('/people/');
       return response.results.map(this.transfromPerson);
     }
@@ -20,6 +20,10 @@ export default class SwapiServiceAPI {
     async getPerson(id) {
       const person = await this.getData(`/people/${id}/`);
       return this.transfromPerson(person)
+    }
+    getAllPlanet = async (id) => {
+      const response = await this.getData(`/planets/`);
+      return response.results.map(this.transfromPlanet);
     }
 
     async getPlanet(id) {
@@ -33,7 +37,7 @@ export default class SwapiServiceAPI {
     }
 
 
-    transfromPlanet(planet){
+    transfromPlanet = (planet) => {
       const id =planet.url.match(/\/([0-9]*)\/$/)[1];
       return {
         id: this.getId(planet),
