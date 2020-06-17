@@ -2,29 +2,20 @@ import React from 'react';
 import '../List/List.css'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI';
 import Loader from '../Loader/Loader';
+import withData from '../helpers/withData'
 
-export default class List extends React.Component {
+const  List = (props) => {
 
-    swapi = new SwapiServiceAPI()
-
-    state = {
-        item: null,
-    }
-
-    componentDidMount() {
-        this.props.getData().then((item) => {
-            this.setState({item})
-        });
-    }
+    const {data, onItemClick, renderItem} = props;
 
 
-    renderList(arr) {
+    const renderList = (arr) => {
         return arr.map((item) => {
-            const text = this.props.renderItem(item);
+            const text = renderItem(item);
             return (
                 <li className="hero_item_info" 
                     key= {item.id}
-                    onClick={() => this.props.onItemClick(item.id)}>
+                    onClick={() => onItemClick(item.id)}>
                     <p>
                         {text}
                     </p>
@@ -33,26 +24,21 @@ export default class List extends React.Component {
         })
     }
 
-    render() {
-        console.log(this.state.people);
+    const items = renderList(data)
 
-        const { item } = this.state;
-
-        if(!item) {
-            return <Loader/>
-        }
-
-        const items = this.renderList(item)
-
-        return(
-            <div className="list_with_heros">
-                <div className="heros">
-                    <h3>Star Wars Heros</h3>
+    return(
+        <div className="list_with_heros">
+            <div className="heros">
+                <h3>Star Wars Heros</h3>
                     <ul>
                         {items}
                     </ul>
-                </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
+
+
+const {getPeople} = new SwapiServiceAPI();
+
+export default withData(List, getPeople);

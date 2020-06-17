@@ -3,7 +3,7 @@
     border: 1px solid black;
     border-radius: 10px;
     width: 40%;
-    transition: all 0.5s;
+    transition: all 0.8s;
 }
 .list_with_heros:hover{
     margin-top: 120px;

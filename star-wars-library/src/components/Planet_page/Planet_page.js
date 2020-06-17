@@ -6,12 +6,12 @@ import '../People_page/People_page.css'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI'
 import Row from '../Row/Row'
 
-export default class People_page extends React.Component {
+export default class Planet_page extends React.Component {
 
     swapi = new SwapiServiceAPI();
 
     state = {
-        selectedHero: null,
+        selectedPlanet: null,
         error: false
     }
 
@@ -19,20 +19,20 @@ export default class People_page extends React.Component {
         this.setState({error:true})
     }
 
-    selectPerson = (id) => {
+    selectPlanet = (id) => {
         this.setState({
-            selectedHero: id
+            selectedPlanet: id
         })
     };
 
     
 
     render () {
-        const list = <List  
-                onItemClick={this.selectPerson}
-                renderItem = {(item) => `${item.name} ${item.gender} ${item.mass}`}/>
+        const list = <List 
+                onItemClick={this.selectPlanet}
+                renderItem = {(item) => `${item.name} ${item.diameter} `}/>
 
-        const hero_infos = <Hero_Infos personID={this.state.selectedHero}/>
+        const hero_infos = <Hero_Infos personID={this.state.selectedPlanet}/>
                                         
         return (
             <div className="hero_information">

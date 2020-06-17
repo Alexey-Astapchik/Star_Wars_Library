@@ -21,7 +21,7 @@ export default class SwapiServiceAPI {
       const person = await this.getData(`/people/${id}/`);
       return this.transfromPerson(person)
     }
-    getAllPlanet = async (id) => {
+    getAllPlanet = async () => {
       const response = await this.getData(`/planets/`);
       return response.results.map(this.transfromPlanet);
     }
