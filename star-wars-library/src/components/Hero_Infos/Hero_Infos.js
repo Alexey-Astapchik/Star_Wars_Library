@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../Hero_Infos/Hero_Infos.css'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI'
+import SwapiContext from '../SwapiContext/SwapiContext';
 export default class Hero_Infos extends React.Component {
    
     swapi = new SwapiServiceAPI()
@@ -11,6 +12,7 @@ export default class Hero_Infos extends React.Component {
     }
 
     componentDidUpdate() {
+
         this.updatePerson();
     }
 
@@ -47,15 +49,15 @@ export default class Hero_Infos extends React.Component {
                     <img className="pic_hero" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}/>
                         <ul>
                             <li className="mass">
-                                <p>Mass</p>
+                                <p className='parametr'>Mass:</p>
                                 <p>{mass}</p>
                             </li>
-                            <li className="home">
-                                <p>Skin Color</p>
+                            <li className="skin">
+                                <p className='parametr'>Skin Color:</p>
                                 <p>{skincolor}</p>
                             </li>
                             <li className="gender">
-                                <p>Gender</p>
+                                <p className='parametr'>Gender:</p>
                                 <p>{gender}</p>
                             </li>
                         </ul>
@@ -65,3 +67,5 @@ export default class Hero_Infos extends React.Component {
         )
     }
 }
+
+Hero_Infos.contextType = SwapiContext;

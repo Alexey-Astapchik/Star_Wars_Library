@@ -3,12 +3,12 @@ import React from 'react';
 import Header from '../Header/Header'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI';
 import Planet from '../Planet/Planet';
-import List from '../List/List';
 import withData from '../helpers/withData'
 import '../App/App.css'
-import Hero_Infos from '../Hero_Infos/Hero_Infos';
 import People_page from '../People_page/People_page';
 import Planet_page from '../Planet_page/Planet_page'
+import SwapiContext from '../SwapiContext/SwapiContext'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 export default class App extends React.Component  {
 
     swapi = new SwapiServiceAPI();
@@ -29,22 +29,18 @@ export default class App extends React.Component  {
 
     render() {
         return (
-            <div className="App">
-                <Header />
-                {this.state.isRandomPlanet && <Planet />}
-                <div className="hero_information">
-                <People_page getData={this.swapi.getPeople}
-                    renderItem = {(item) => `${item.name} ${item.gender} ${item.mass}`}/>
-                <Planet_page getData={this.swapi.getAllPlanet}
-                    renderItem = {(item) => `${item.name} ${item.diameter}`}/>
-                 {/* <List 
-                    getData={this.swapi.getAllPlanet}  
-                    onItemClick={this.selectPerson}
-                    renderItem = {(item) => `${item.name} ${item.diameter}`}/>
+                <Router>
+                    <div className="App">
+                        <Header />
+                        {this.state.isRandomPlanet && <Planet />}
 
-                 <Hero_Infos personID={this.state.selectedHero}/> */}
-            </div>
-            </div>
+                            <Route path='/people' render= { () => <People_page getData={this.swapi.getPeople}
+                                    renderItem = {(item) => `${item.name} ${item.gender} ${item.mass}`}/>}/>
+
+                            <Route path='/planets' render= { () => <Planet_page getData={this.swapi.getAllPlanet}
+                                    renderItem = {(item) => `${item.name} ${item.diameter}`}/>}/>
+                    </div>
+                </Router>
         )
     }
 }

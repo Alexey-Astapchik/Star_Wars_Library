@@ -1,14 +1,14 @@
 import React from 'react'
 
-
+import '../Row/Row.css'
 
 const Row = ({left, right}) => {
     return (
-        <div className="Row">
-            <div>
+        <div>
+            <div className="left_row">
                 {left}
             </div>
-            <div>
+            <div className="right_row">
                 {right}
             </div>
         </div>

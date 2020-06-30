@@ -43,8 +43,7 @@ export default class SwapiServiceAPI {
         id: this.getId(planet),
         name: planet.name,
         diameter: planet.diameter,
-        population: planet.population,
-        gravity: planet.gravity
+        climate: planet.climate
       }
     }
 

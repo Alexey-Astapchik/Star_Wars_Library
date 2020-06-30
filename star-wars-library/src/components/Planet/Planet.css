@@ -3,7 +3,6 @@
     border: 1px solid black;
     border-radius: 10px;
     width: 50%;
-    transition: all 0.5s;
 }
 .planet:hover{
     margin-top: 120px;
@@ -23,6 +22,7 @@
 li{
     margin-top: 10px;
     color: #FFEE58!important;
+    font-family: Helvetica, Arial, sans-serif;
 }
 .diametr{
     border: 1px solid black;

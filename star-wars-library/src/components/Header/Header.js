@@ -1,23 +1,24 @@
 import React from 'react';
 import '../Header/Header.css'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='header'>
             <div>
-                <div>
+                <div className='logo'>
                     <h1>Star Wars Guide</h1>
                 </div>
                 <div className='list'>
                     <ul className="d-flex list_of_items">
                         <li>
-                            <a href='#'>People</a>
+                            <Link to='/people' href='#'>People</Link>
                         </li>
                         <li>
-                            <a href='#'>Planets</a>
+                            <Link to='/planets' href='#'>Planets</Link>
                         </li>
                         <li>
-                            <a href='#'>Ships</a>
+                            <Link to='/ships' href='#'>Ships</Link>
                         </li>
                     </ul>
                 </div>

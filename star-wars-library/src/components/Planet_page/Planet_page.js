@@ -1,7 +1,6 @@
 import React from 'react';
-
-import List from '../List/List'
-import Hero_Infos from '../Hero_Infos/Hero_Infos'
+import Planet_list from '../Planet_page/Planet_list/Planet_list';
+import Planet_info from '../Planet_page/Planet_info/Planet_info';
 import '../People_page/People_page.css'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI'
 import Row from '../Row/Row'
@@ -28,15 +27,15 @@ export default class Planet_page extends React.Component {
     
 
     render () {
-        const list = <List 
+        const planets_list = <Planet_list 
                 onItemClick={this.selectPlanet}
-                renderItem = {(item) => `${item.name} ${item.diameter} `}/>
+                renderItem = {(item) => `${item.name} ${item.diameter}`}/>
 
-        const hero_infos = <Hero_Infos personID={this.state.selectedPlanet}/>
+        const planets_infos = <Planet_info personID={this.state.selectedPlanet}/>
                                         
         return (
-            <div className="hero_information">
-                 <Row left={list} right={hero_infos}/>
+            <div className='row_info'>
+                 <Row left={planets_list} right={planets_infos}/>
             </div>
         )
     }
