@@ -1,9 +1,10 @@
 import React from 'react';
+
 import List from '../List/List'
 import Hero_Infos from '../Hero_Infos/Hero_Infos'
 import '../People_page/People_page.css'
 import SwapiServiceAPI from '../../services/SwapiServiceAPI'
-import Row from '../Row/Row'
+import Row from '../Row/Row';
 
 export default class People_page extends React.Component {
 

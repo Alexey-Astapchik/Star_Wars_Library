@@ -4,9 +4,10 @@ import '../Planet_info/Planet_info.css'
 import SwapiServiceAPI from '../../../services/SwapiServiceAPI'
 import SwapiContext from '../../SwapiContext/SwapiContext';
 
+
 export default class Planet_info extends React.Component {
    
-    swapi = new SwapiServiceAPI();
+    swapi = new SwapiServiceAPI()
 
     state = {
         planet: 1
@@ -38,7 +39,7 @@ export default class Planet_info extends React.Component {
             return <p>Please, select a planet</p>
         }
 
-        const { id, name, diameter} = this.state.planet;
+        const { id, name, diameter, population} = this.state.planet;
 
         return (
             <div className="hero_infos">
@@ -55,6 +56,10 @@ export default class Planet_info extends React.Component {
                             <li className="skin">
                                 <p className='parametr'>Diametr:</p>
                                 <p>{diameter}</p>
+                            </li>
+                            <li className="mass">
+                                <p>Population:</p>
+                                <p> {population} </p>
                             </li>
                         </ul>
                     </div>

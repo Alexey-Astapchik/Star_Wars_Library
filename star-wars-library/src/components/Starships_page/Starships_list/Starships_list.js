@@ -1,21 +1,22 @@
 import React from 'react';
-import '../Planet_list/Planet_list.css';
+
+import '../Starships_list/Starships_list.css';
 import SwapiServiceAPI from '../../../services/SwapiServiceAPI'
 import Loader from '../../Loader/Loader';
 import withData from '../../helpers/withData'
 
-const  Planet_List = (props) => {
+const  Starships_list = (props) => {
 
     const {data, onItemClick, renderItem} = props;
 
 
     const renderList = (arr) => {
-        return arr.map((planet) => {
-            const text = renderItem(planet);
+        return arr.map((item) => {
+            const text = renderItem(item);
             return (
                 <li className="hero_item_info" 
-                    key= {planet.id}
-                    onClick={() => onItemClick(planet.id)}>
+                    key= {item.id}
+                    onClick={() => onItemClick(item.id)}>
                     <p>
                         {text}
                     </p>
@@ -24,12 +25,12 @@ const  Planet_List = (props) => {
         })
     }
 
-    const items = renderList(data)
+    const items = renderList(data);
 
     return(
         <div className="list_with_heros">
             <div className="heros">
-                <h3>Planets</h3>
+                <h3>Starships</h3>
                     <ul>
                         {items}
                     </ul>
@@ -39,7 +40,7 @@ const  Planet_List = (props) => {
 }
 
 
-const {getAllPlanet} = new SwapiServiceAPI();
+const {getAllShips} = new SwapiServiceAPI();
 
-export default withData(Planet_List, getAllPlanet);
+export default withData(Starships_list, getAllShips);
 

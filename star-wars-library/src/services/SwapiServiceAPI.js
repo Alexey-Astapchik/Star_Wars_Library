@@ -17,13 +17,24 @@ export default class SwapiServiceAPI {
       return response.results.map(this.transfromPerson);
     }
 
+    getAllPlanet = async () => {
+      const response = await this.getData('/planets/');
+      return response.results.map(this.transfromPlanet);
+    }
+
+    getAllShips = async () => {
+      const response = await this.getData('/starships/');
+      return response.results.map(this.transfromShips);
+    }
+
     async getPerson(id) {
       const person = await this.getData(`/people/${id}/`);
       return this.transfromPerson(person)
     }
-    getAllPlanet = async () => {
-      const response = await this.getData(`/planets/`);
-      return response.results.map(this.transfromPlanet);
+
+    async getShip(id) {
+      const ship = await this.getData(`/starships/${id}/`);
+      return this.transfromShips(ship);
     }
 
     async getPlanet(id) {
@@ -36,14 +47,26 @@ export default class SwapiServiceAPI {
       return item.url.match(/\/([0-9]*)\/$/)[1];
     }
 
+    transfromShips = (ship) => {
+      const id = ship.url.match(/\/([0-9]*)\/$/)[1];
+      return {
+        id: this.getId(ship),
+        name: ship.name,
+        cargo_capacity: ship.cargo_capacity,
+        consumables: ship.consumables,
+        model: ship.model
+      }
+    }
 
     transfromPlanet = (planet) => {
-      const id =planet.url.match(/\/([0-9]*)\/$/)[1];
+      const id = planet.url.match(/\/([0-9]*)\/$/)[1];
       return {
         id: this.getId(planet),
         name: planet.name,
         diameter: planet.diameter,
-        climate: planet.climate
+        climate: planet.climate,
+        gravity: planet.gravity,
+        population: planet.population
       }
     }
 
@@ -55,16 +78,6 @@ export default class SwapiServiceAPI {
         gender: person.gender,
         skincolor: person.skin_color
       }
-    }
-
-    //create a function transfrom for Spaceship
+    } 
 }
 
-  
-//   getData('https://swapi.dev/api/people/-1/')
-//     .then((result) => {
-//       console.log(`then ${result}` ,result)
-//     })
-//     .catch((err) => {
-//       console.log(`catch ${err}`)
-//     })

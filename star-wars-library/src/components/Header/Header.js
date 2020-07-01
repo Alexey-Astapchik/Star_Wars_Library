@@ -18,7 +18,7 @@ const Header = () => {
                             <Link to='/planets' href='#'>Planets</Link>
                         </li>
                         <li>
-                            <Link to='/ships' href='#'>Ships</Link>
+                            <Link to='/ships' href='#'>Starships</Link>
                         </li>
                     </ul>
                 </div>

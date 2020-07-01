@@ -40,6 +40,7 @@ export default class Hero_Infos extends React.Component {
         }
 
         const { id, name, mass, skincolor, gender } = this.state.person;
+        
         return (
             <div className="hero_infos">
                 <div className="block-with-info">
