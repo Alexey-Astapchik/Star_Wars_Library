@@ -17,7 +17,7 @@ export default class Starships_info extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.planetID !== prevProps.planetID){
+        if(this.props.shipID !== prevProps.shipID){
             this.updateShip()
         }
     }

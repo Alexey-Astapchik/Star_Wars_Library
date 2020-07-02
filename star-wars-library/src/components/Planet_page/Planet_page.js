@@ -32,7 +32,7 @@ export default class Planet_page extends React.Component {
                 onItemClick={this.selectPlanet}
                 renderItem = {(planet) => `${planet.name} ${planet.diameter}`}/>
 
-        const planets_infos = <Planet_info personID={this.state.selectedPlanet}/>
+        const planets_infos = <Planet_info planetID={this.state.selectedPlanet}/>
                                         
         return (
             <div className='row_info'>

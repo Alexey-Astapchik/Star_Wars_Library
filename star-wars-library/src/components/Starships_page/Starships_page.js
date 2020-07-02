@@ -31,9 +31,9 @@ export default class Starships_page extends React.Component {
     render () {
         const ships_list = <Starships_list
                 onItemClick={this.selectShip}
-                renderItem = {(item) => `${item.name} - ${item.model}`}/>
+                renderItem = {(ship) => `${ship.name} - ${ship.model}`}/>
 
-        const ships_info = <Starships_info personID={this.state.selectedShip}/>
+        const ships_info = <Starships_info shipID={this.state.selectedShip}/>
                                         
         return (
             <div className='row_info'>

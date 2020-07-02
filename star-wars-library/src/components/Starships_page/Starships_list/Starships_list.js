@@ -11,12 +11,12 @@ const  Starships_list = (props) => {
 
 
     const renderList = (arr) => {
-        return arr.map((item) => {
-            const text = renderItem(item);
+        return arr.map((ship) => {
+            const text = renderItem(ship);
             return (
                 <li className="hero_item_info" 
-                    key= {item.id}
-                    onClick={() => onItemClick(item.id)}>
+                    key= {ship.id}
+                    onClick={() => onItemClick(ship.id)}>
                     <p>
                         {text}
                     </p>
