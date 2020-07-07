@@ -4,7 +4,7 @@ import '../Row/Row.css'
 
 const Row = ({left, right}) => {
     return (
-        <div>
+        <div className='row_with_infos'>
             <div className="left_row">
                 {left}
             </div>

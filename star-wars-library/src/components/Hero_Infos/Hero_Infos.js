@@ -47,21 +47,25 @@ export default class Hero_Infos extends React.Component {
                     <h3>The Information about hero:</h3>
                     <h4>{name}</h4>
                     <div className="info_list">
-                    <img className="pic_hero" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}/>
+                        <div className="pic_hero">
+                        <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}/>
+                        </div>
+                        <div className='parameters_list'>
                         <ul>
                             <li className="mass">
                                 <p className='parametr'>Mass:</p>
-                                <p>{mass}</p>
+                                <span>{mass}</span>
                             </li>
                             <li className="skin">
                                 <p className='parametr'>Skin Color:</p>
-                                <p>{skincolor}</p>
+                                <span>{skincolor}</span>
                             </li>
                             <li className="gender">
                                 <p className='parametr'>Gender:</p>
-                                <p>{gender}</p>
+                                <span>{gender}</span>
                             </li>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>

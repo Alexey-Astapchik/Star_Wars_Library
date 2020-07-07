@@ -8,7 +8,7 @@ import Row from '../Row/Row'
 
 export default class Planet_page extends React.Component {
 
-    swapi = new SwapiServiceAPI();
+    swapi = new SwapiServiceAPI()
 
     state = {
         selectedPlanet: null,
@@ -23,14 +23,14 @@ export default class Planet_page extends React.Component {
         this.setState({
             selectedPlanet: id
         })
-    };
+    }
 
     
 
     render () {
         const planets_list = <Planet_list 
                 onItemClick={this.selectPlanet}
-                renderItem = {(planet) => `${planet.name} ${planet.diameter}`}/>
+                renderItem = {(planet) => `${planet.name}: ${planet.diameter}`}/>
 
         const planets_infos = <Planet_info planetID={this.state.selectedPlanet}/>
                                         

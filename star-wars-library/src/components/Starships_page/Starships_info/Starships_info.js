@@ -46,25 +46,29 @@ export default class Starships_info extends React.Component {
                     <h3>The Information about starship:</h3>
                     <h4>{name}</h4>
                     <div className="info_list">
-                    <img className="pic_hero" src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}/>
-                        <ul>
-                            <li className="mass">
-                                <p className='parametr'>Name:</p>
-                                <p>{name}</p>
-                            </li>
-                            <li className="skin">
-                                <p className='parametr'>Model:</p>
-                                <p>{model}</p>
-                            </li>
-                            <li className="mass">
-                                <p>Cargo:</p>
-                                <p> {cargo_capacity} </p>
-                            </li>
-                            <li className="mass">
-                                <p>Consumables:</p>
-                                <p> {consumables}</p>
-                            </li>
-                        </ul>
+                        <div className="pic_hero">
+                        <img  src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}/>
+                        </div>
+                        <div className='parameters_list'>
+                            <ul>
+                                <li className="mass">
+                                    <p className='parametr'>Name:</p>
+                                    <span>{name}</span>
+                                </li>
+                                <li className="skin">
+                                    <p className='parametr'>Model:</p>
+                                    <span>{model}</span>
+                                </li>
+                                <li className="mass">
+                                    <p>Cargo:</p>
+                                    <span> {cargo_capacity} </span>
+                                </li>
+                                <li className="mass">
+                                    <p>Consumables:</p>
+                                    <span> {consumables}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

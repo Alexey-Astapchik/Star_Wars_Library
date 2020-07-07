@@ -8,7 +8,7 @@ import Row from '../Row/Row';
 
 export default class People_page extends React.Component {
 
-    swapi = new SwapiServiceAPI();
+    swapi = new SwapiServiceAPI()
 
     state = {
         selectedHero: null,
@@ -23,14 +23,14 @@ export default class People_page extends React.Component {
         this.setState({
             selectedHero: id
         })
-    };
+    }
 
     
 
     render () {
         const list = <List  
                 onItemClick={this.selectPerson}
-                renderItem = {(item) => `${item.name} ${item.gender} ${item.mass}`}/>
+                renderItem = {(item) => `${item.name}: ${item.gender}, ${item.mass}`}/>
 
         const hero_infos = <Hero_Infos personID={this.state.selectedHero}/>
                                         

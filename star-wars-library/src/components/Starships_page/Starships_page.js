@@ -5,8 +5,6 @@ import Starships_list from '../Starships_page/Starships_list/Starships_list';
 import '../Starships_page/Starships_page.css';
 import SwapiServiceAPI from '../../services/SwapiServiceAPI';
 import Row from '../Row/Row'
-
-
 export default class Starships_page extends React.Component {
 
     swapi = new SwapiServiceAPI();

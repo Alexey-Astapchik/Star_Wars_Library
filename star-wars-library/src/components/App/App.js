@@ -12,7 +12,7 @@ import SwapiContext from '../SwapiContext/SwapiContext'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 export default class App extends React.Component  {
 
-    swapi = new SwapiServiceAPI();
+    swapi = new SwapiServiceAPI()
 
     state = {
         isRandomPlanet: true,
@@ -23,7 +23,7 @@ export default class App extends React.Component  {
 
     onTogglePlanet = () => {
         this.setState((prevState) => {
-            return {isRandomPlanet: !prevState.isRandomPlanet,}
+            return {isRandomPlanet: !prevState.isRandomPlanet}
         });
     };
 

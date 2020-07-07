@@ -47,21 +47,25 @@ export default class Planet_info extends React.Component {
                     <h3>The Information about planet:</h3>
                     <h4>{name}</h4>
                     <div className="info_list">
-                    <img className="pic_hero" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}/>
-                        <ul>
-                            <li className="mass">
-                                <p className='parametr'>Name:</p>
-                                <p>{name}</p>
-                            </li>
-                            <li className="skin">
-                                <p className='parametr'>Diametr:</p>
-                                <p>{diameter}</p>
-                            </li>
-                            <li className="mass">
-                                <p>Population:</p>
-                                <p> {population} </p>
-                            </li>
-                        </ul>
+                        <div className="pic_hero">
+                            <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}/>
+                        </div>
+                        <div className='parameters_list'>
+                            <ul>
+                                <li className="mass">
+                                    <p className='parametr'>Name:</p>
+                                    <span>{name}</span>
+                                </li>
+                                <li className="skin">
+                                    <p className='parametr'>Diametr:</p>
+                                    <span>{diameter}</span>
+                                </li>
+                                <li className="mass">
+                                    <p>Population:</p>
+                                    <span> {population} </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

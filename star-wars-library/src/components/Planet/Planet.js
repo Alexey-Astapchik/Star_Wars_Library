@@ -70,8 +70,10 @@ const PlanetView = (props) => {
         <div className="planet">
             <div className="random_planet">
                 <h3>Planet: {name} </h3>
-                <div>
-                    <img className="pic_planet" src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}/>
+                <div className="pic_planet">
+                    <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}/>
+                </div>
+                    <div className='planet_infos'> 
                     <ul>
                         <li className="diametr">
                             <span>Diametr:</span>
@@ -86,8 +88,8 @@ const PlanetView = (props) => {
                             <span> {gravity}</span>
                         </li>
                     </ul>
+                    </div>
                 </div>
             </div>
-        </div>
     )
 }
